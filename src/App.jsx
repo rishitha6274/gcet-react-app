@@ -12,7 +12,8 @@ function App() {
         <header>
           <h1>React Store</h1>
           <Link to="/">Home</Link>-
-          <Link to="/cart">Cart</Link>
+          <Link to="/cart">Cart</Link>-
+          <Link to="/login">Cart</Link>
           <hr />
         </header>
 
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<Product />} />
             <Route path="/" element={<Product/>}></Route>
             <Route path="/cart" element={<Cart/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
           </Routes>
         </main>
 
