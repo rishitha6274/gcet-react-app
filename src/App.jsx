@@ -4,6 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Product from "./components/Product";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <h1>React Store</h1>
           <Link to="/">Home</Link>-
           <Link to="/cart">Cart</Link>-
-          <Link to="/login">Cart</Link>
+          <Link to="/login">Login</Link>
           <hr />
         </header>
 
