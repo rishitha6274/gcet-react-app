@@ -8,7 +8,7 @@ function App() {
     <>
      <div>
        <header>
-        <h1>My Online Shop</h1>
+        <h1>React Store</h1>
         <hr />
        </header>
        <main>
