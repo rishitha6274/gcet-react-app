@@ -6,7 +6,17 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1>My Shop</h1>
+     <header>
+      <h1>My Online Shop</h1>
+      <hr />
+     </header>
+     <main>
+      <h2>Products List</h2>
+     </main>
+     <footer>
+      <hr />
+      &copy; 2025 All rights Reserved.
+     </footer>
     </>
   )
 }
