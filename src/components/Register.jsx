@@ -14,19 +14,21 @@ export default function Register() {
   const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async () => {
-    const user = { name, email, password };
+  const user = { name, email, password };
+ 
 
-    try {
-      const url = `${API}/register`;
-      const response = await axios.post(url, user);
+  try {
+    const url = `${API}/register`;
+    const response = await axios.post(url, user);
 
 
-      navigate("/login");
-    } catch (err) {
-      console.error(err);
-      setMsg("Registration failed. Please try again.");
-    }
-  };
+    navigate("/login");
+  } catch (err) {
+    console.error("Error:", err.response?.data || err.message); 
+    setMsg("Registration failed. Please try again.");
+  }
+};
+
 
   return (
     <div className="form-container">
