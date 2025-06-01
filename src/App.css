@@ -24,6 +24,16 @@ header h1 {
   color: #d86c7a;
   margin-bottom: 10px;
 }
+nav a {
+  color: #d86c7a;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
 
 footer {
   margin-top: auto;
