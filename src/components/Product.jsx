@@ -32,7 +32,7 @@ export default function Product() {
 
       <ul style={{ listStyle: "none", padding: 0 }}>
         {products.map(product => (
-          <li key={product.id} style={{ margin: "10px 0" }}>
+          <li key={product._id} style={{ margin: "10px 0" }}>
             <strong>{product.name}</strong>: ${product.price}
           </li>
         ))}
