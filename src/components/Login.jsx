@@ -1,66 +1,58 @@
-import React, { useContext, useState } from "react";
-import { AppContext } from "../App"; 
+import React, { useState, useContext } from "react";
+import { AppContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import '../App.css';
 
 export default function Login() {
-  const { setUser } = useContext(AppContext); 
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [msg, setMsg] = useState(""); 
-  const navigate = useNavigate();
+  const { user = {}, setUser } = useContext(AppContext); // <-- default to empty object
+  const [msg, setMsg] = useState();
+  const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
-  const handleLogin = async () => {
-    const url = `${API}/login`;
-
+  const handleSubmit = async () => {
     try {
-     
-      const response = await axios.post(url, { email, pass });
+      const url = `${API}/users/login`;
+      const found = await axios.post(url, user);
 
-      if (response.data.token) {
-        setUser(response.data); 
-        navigate("/");
+      if (found.data.email) {
+        setUser(found.data);
+        Navigate("/");
       } else {
         setMsg("Invalid User or Password");
       }
-    } catch (error) {
-      setMsg("Login failed. Please try again.");
-      console.error(error);
+    } catch {
+      setMsg("Login failed. Try again.");
     }
   };
 
-  const handleCreateAccount = () => {
-    navigate("/register");
+  const goToRegister = () => {
+    Navigate("/register");
   };
 
   return (
     <div className="form-container">
-      <h3 className="form-title">Login</h3>
-
-      {msg && <p className="error-msg">{msg}</p>}
-
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={pass}
-        onChange={e => setPass(e.target.value)}
-      />
-      <button onClick={handleLogin}>Submit</button>
-
-      <button
-        style={{ marginTop: "12px", backgroundColor: "#f9dcdc", color: "#d86c7a" }}
-        onClick={handleCreateAccount}
-      >
-        Create Account
-      </button>
+      <h3>Login</h3>
+      {msg}
+      <p>
+        <input
+          type="text"
+          placeholder="Email address"
+          value={user.email || ""}
+          onChange={(e) => setUser({ ...user, email: e.target.value })}
+        />
+      </p>
+      <p>
+        <input
+          type="password"
+          placeholder="Password"
+          value={user.pass || ""}
+          onChange={(e) => setUser({ ...user, pass: e.target.value })}
+        />
+      </p>
+      <button onClick={handleSubmit}>Submit</button>
+      <p>
+        <button onClick={goToRegister}>Create Account</button>
+      </p>
     </div>
   );
 }

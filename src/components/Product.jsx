@@ -21,8 +21,16 @@ export default function Product() {
   };
 
   const addToCart = (product) => {
-    setCart(prev => [...prev, product]);
-  };
+  const existingProductIndex = cart.findIndex(p => p._id === product._id);
+  if (existingProductIndex !== -1) {
+    const newCart = [...cart];
+    newCart[existingProductIndex].quantity = (newCart[existingProductIndex].quantity || 1) + 1;
+    setCart(newCart);
+  } else {
+    setCart(prev => [...prev, { ...product, quantity: 1 }]);
+  }
+};
+
 
   useEffect(() => {
     fetchProducts();
@@ -33,14 +41,15 @@ export default function Product() {
       {user && <h2 className="form-title">Welcome, {user.name}!</h2>}
       <p style={{ color: "#d86c7a" }}>Product List</p><br />
 
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {products.map(product => (
-          <li key={product._id} style={{ margin: "10px 0" }}>
-            <strong>{product.name}</strong>: ${product.price}{" "}
-            <button onClick={() => addToCart(product)}>Add to Cart</button>
-          </li>
-        ))}
-      </ul>
+      <div className="product-grid">
+  {products.map(product => (
+    <div key={product._id} className="product-card">
+      <h4>{product.name}</h4>
+      <p>${product.price}</p>
+      <button onClick={() => addToCart(product)}>Add to Cart</button>
+    </div>
+  ))}
+</div>
     </div>
   );
 }
