@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Login() {
-  const { user = {}, setUser } = useContext(AppContext); // <-- default to empty object
+  const { user = {}, setUser } = useContext(AppContext); 
   const [msg, setMsg] = useState();
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
