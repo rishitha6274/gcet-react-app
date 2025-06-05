@@ -8,13 +8,13 @@ export default function Register() {
   const { setUsers } = useContext(AppContext); 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pass, setPass] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async () => {
-  const user = { name, email, password };
+  const user = { name, email, pass };
  
 
   try {
@@ -51,8 +51,8 @@ export default function Register() {
       <input
         type="password"
         placeholder="Password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
+        value={pass}
+        onChange={e => setPass(e.target.value)}
       />
       <button onClick={handleSubmit}>Submit</button>
     </div>

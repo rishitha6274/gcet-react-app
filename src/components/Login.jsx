@@ -7,7 +7,7 @@ import '../App.css';
 export default function Login() {
   const { setUser } = useContext(AppContext); 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [pass, setPass] = useState("");
   const [msg, setMsg] = useState(""); 
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
@@ -17,7 +17,7 @@ export default function Login() {
 
     try {
      
-      const response = await axios.post(url, { email, password });
+      const response = await axios.post(url, { email, pass });
 
       if (response.data.token) {
         setUser(response.data); 
@@ -50,8 +50,8 @@ export default function Login() {
       <input
         type="password"
         placeholder="Password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
+        value={pass}
+        onChange={e => setPass(e.target.value)}
       />
       <button onClick={handleLogin}>Submit</button>
 
