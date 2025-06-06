@@ -44,8 +44,8 @@ export default function Product() {
       <div className="product-grid">
   {products.map(product => (
     <div key={product._id} className="product-card">
-      <h4>{product.name}</h4>
-      <p>${product.price}</p>
+      <h4>{product.name}</h4> <h5>{product.description}</h5>
+      <p>₹{product.price}</p>
       <button onClick={() => addToCart(product)}>Add to Cart</button>
     </div>
   ))}
