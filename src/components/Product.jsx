@@ -46,7 +46,7 @@ export default function Product() {
     <div key={product._id} className="product-card">
       <h4>{product.name}</h4> <h5>{product.description}</h5> <img src={product.imgUrl} alt={product.name} style={{ width: "200px", height: "auto" }} />
 
-      <p>₹{product.price}</p>
+      <p><h4 style={{ color: "black" }}>₹{product.price}</h4></p>
       <button onClick={() => addToCart(product)}>  <i className="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
   ))}

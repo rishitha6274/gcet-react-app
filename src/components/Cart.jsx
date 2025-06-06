@@ -44,7 +44,7 @@ export default function Cart() {
       <h3 className="form-title">Your Cart</h3>
 
       {cart.length === 0 ? (
-        <p style={{ color: "#d86c7a" }}>Your cart is empty 😊</p>
+        <p style={{ color: "#d86c7a" }}>Your cart is empty :) </p>
       ) : (
         <>
           <div className="product-grid">

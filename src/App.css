@@ -70,8 +70,20 @@ main {
   max-width: 500px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease-in-out;
-}
 
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.product-card h4,
+.product-card h5,
+.product-card p,
+.product-card img {
+  margin-bottom: 10px;
+}
+.product-card button {
+  margin-top: auto;
+}
 .product-card:hover {
   transform: translateY(-5px);
 }
@@ -95,6 +107,7 @@ button {
   padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
+  width: 130px;
   transition: background-color 0.2s ease-in-out;
   margin-top: 10px;
 }
