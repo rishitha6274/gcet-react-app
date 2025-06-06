@@ -6,11 +6,11 @@
 }
 
 .product-card {
-  background: #fff;
+  background: rgb(251, 227, 230);
   border: 2px solid #f9dcdc;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.317);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   text-align: center;
 }
