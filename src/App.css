@@ -53,12 +53,13 @@ main {
   margin-bottom: 30px;
 }
 
-.products-container {
+.product-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  /* grid-template-columns: repeat(2, 1fr); */
   gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1400px;
+  /* margin: 0 auto; */
 }
 
 .product-card {
@@ -66,6 +67,7 @@ main {
   border: 1px solid #f6c5d5;
   border-radius: 12px;
   padding: 20px;
+  max-width: 500px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease-in-out;
 }
@@ -109,7 +111,7 @@ footer {
   color: #a04456;
   background-color: #fcdbe6;
   box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
-  margin-top: 100px;
+  margin-top: 0px;
 }
 
 .login-section {
