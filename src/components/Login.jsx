@@ -32,7 +32,7 @@ export default function Login() {
   return (
     <div className="login-section">
       <div className="login-box">
-      <h3>Login</h3>
+      <h3><i class="fas fa-user"></i> Login</h3>
       {msg}
       <p>
         <input

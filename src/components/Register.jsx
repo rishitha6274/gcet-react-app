@@ -21,7 +21,7 @@ export default function Register() {
   return (
     <div className="login-box" style={{ margin: "30px" }}>
       <div>
-        <h3><i className="fas fa-user-plus"></i>Register</h3>
+        <h3><i className="fas fa-user-plus"></i> Register</h3>
         <p>
           <input
             type="text"
