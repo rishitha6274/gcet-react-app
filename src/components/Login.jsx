@@ -4,23 +4,29 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Login() {
-  const { user = {}, setUser } = useContext(AppContext); 
-  const [msg, setMsg] = useState();
+  const { setUser } = useContext(AppContext); 
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [msg, setMsg] = useState("");
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async () => {
     try {
       const url = `${API}/users/login`;
-      const found = await axios.post(url, user);
+      const found = await axios.post(url, { email, pass });
 
-      if (found.data.email) {
-        setUser(found.data);
-        Navigate("/");
-      } else {
+      const { user, token } = found.data;
+
+      if (user && token) {
+  setUser({ ...user, token }); 
+  Navigate("/");
+}
+ else {
         setMsg("Invalid User or Password");
       }
-    } catch {
+    } catch (err) {
+      console.error("Login error:", err);
       setMsg("Login failed. Try again.");
     }
   };
@@ -32,31 +38,28 @@ export default function Login() {
   return (
     <div className="login-section">
       <div className="login-box">
-      <h3><i class="fas fa-user"></i> Login</h3>
-      {msg}
-      <p>
-        <input
-          type="text"
-          placeholder="Email address"
-          value={user.email || ""}
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-        />
-      </p>
-      <p>
-        <input
-          type="password"
-          placeholder="Password"
-          value={user.pass || ""}
-          onChange={(e) => setUser({ ...user, pass: e.target.value })}
-        />
-      
+        <h3><i className="fas fa-user"></i> Login</h3>
+        {msg && <p style={{ color: "red" }}>{msg}</p>}
+        <p>
+          <input
+            type="text"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </p>
+        <p>
+          <input
+            type="password"
+            placeholder="Password"
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
+          />
         </p>
         <div className="btn-group">
-        <button onClick={handleSubmit}>Submit</button>
-        
+          <button onClick={handleSubmit}>Submit</button>
           <button onClick={goToRegister}>Create Account</button>
-        
-      </div>
+        </div>
       </div>
     </div>
   );

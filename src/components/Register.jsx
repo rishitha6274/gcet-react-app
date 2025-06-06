@@ -8,16 +8,30 @@ export default function Register() {
   const [user, setUser] = useState({});
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
+  // const handleSubmit = async () => {
+  //   //setUsers([...users, user]);
+  //   try {
+  //     const url = `${API}/users/register`;
+  //     await axios.post(url, user);
+  //     Navigate("/login");
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
   const handleSubmit = async () => {
-    //setUsers([...users, user]);
-    try {
-      const url = `${API}/users/register`;
-      await axios.post(url, user);
-      Navigate("/login");
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  try {
+    const url = `${API}/users/register`;
+    const res = await axios.post(url, user);
+    console.log("Registered user:", res.data);
+
+    setUsers([...users, res.data.user]);
+
+    Navigate("/login");
+  } catch (err) {
+    console.log("Registration failed:", err.response?.data || err.message);
+  }
+};
+
   return (
     <div className="login-box" style={{ margin: "30px" }}>
       <div>
