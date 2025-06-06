@@ -1,109 +1,170 @@
-* {
+body {
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  padding: 0;
+  background: linear-gradient(to bottom, #fff6fa, #fdecef);
+  color: #333;
+}
+* {
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #f8ede3, #fce1e4);
-  color: #333;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
 
-header,
-footer {
-  background-color: #f9dcdc;
-  padding: 20px;
+header {
+  background-color: #ffe5ec;
+  padding: 20px 0;
   text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
-  color: #d86c7a;
-  margin-bottom: 10px;
+  color: #b03060;
+  font-size: 32px;
+  margin: 0;
 }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
 nav a {
-  color: #d86c7a;
+  color: #b03060;
   text-decoration: none;
-  margin: 0 10px;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  margin-top: auto;
-  font-size: 14px;
-  color: #d86c7a;
-}
-
-a {
-  color: #d86c7a;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: 500;
-}
-
-a:hover {
-  text-decoration: underline;
+nav a i {
+  margin-right: 6px;
 }
 
 main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 40px 20px;
 }
 
-.form-container {
-  border: 2px dotted #d86c7a;
-  border-radius: 10px;
-  background: linear-gradient(to right, #f8ede3, #fce1e4);
-  padding: 30px 25px;
-  width: 600px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.welcome {
   text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.form-title {
-  color: #d86c7a;
-  margin-bottom: 20px;
+.product-card {
+  background-color: #fff;
+  border: 1px solid #f6c5d5;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: #fff;
-  color: #333;
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card h4 {
+  color: #b03060;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.product-card p {
+  color: #444;
   font-size: 14px;
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  background-color: #d86c7a;
-  color: white;
-  font-size: 15px;
+  background-color: #e35b78;
   border: none;
+  color: #fff;
+  font-weight: 500;
+  padding: 10px 16px;
   border-radius: 6px;
   cursor: pointer;
-  margin-top: 5px;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #c35567;
+  background-color: #c94764;
 }
 
-.form-container h2,
-.form-container p {
-  color: #d86c7a;
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #a04456;
+  background-color: #fff0f5;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.03);
+  margin-top: 40px;
 }
+
+.login-section {
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+}
+
+.login-box {
+  background-color: #fff0f5;
+  border: 1px solid #f6c5d5;
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 500px;
+}
+
+.login-box h2 {
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #b03060;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #f6c5d5;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.login-box .btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.login-box .btn-group button {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 15px;
+  background-color: #e35b78;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-box .btn-group button:hover {
+  background-color: #c94764;
+}
+

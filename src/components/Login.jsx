@@ -30,7 +30,8 @@ export default function Login() {
   };
 
   return (
-    <div className="form-container">
+    <div className="login-section">
+      <div className="login-box">
       <h3>Login</h3>
       {msg}
       <p>
@@ -48,11 +49,15 @@ export default function Login() {
           value={user.pass || ""}
           onChange={(e) => setUser({ ...user, pass: e.target.value })}
         />
-      </p>
-      <button onClick={handleSubmit}>Submit</button>
-      <p>
-        <button onClick={goToRegister}>Create Account</button>
-      </p>
+      
+        </p>
+        <div className="btn-group">
+        <button onClick={handleSubmit}>Submit</button>
+        
+          <button onClick={goToRegister}>Create Account</button>
+        
+      </div>
+      </div>
     </div>
   );
 }

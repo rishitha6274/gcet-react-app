@@ -1,4 +1,4 @@
-.product-grid {
+/* .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
@@ -46,4 +46,4 @@
 
 .product-card button:hover {
   background-color: #c35567;
-}
+} */

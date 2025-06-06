@@ -27,13 +27,13 @@ export default function Orders() {
       <h3 className="form-title">My Orders</h3>
 
       {orders.length === 0 ? (
-        <p style={{ color: "#d86c7a" }}>No orders placed yet.</p>
+        <p style={{ color: "#d86c7a" }}> <i className="fas fa-ban"></i> No orders placed yet.</p>
       ) : (
         <>
           <div className="product-grid">
             {orders.map((order) => (
               <div key={order.id} className="product-card">
-                <h4>Order #{order.id}</h4>
+              <i className="fas fa-receipt order-icon"></i>  <h4>Order #{order.id}</h4>
                 <p>Total: ${order.total.toFixed(2)}</p>
                 <ul style={{ listStyle: "circle", paddingLeft: "20px", textAlign: "left" }}>
                   {order.items.map((item, idx) => (

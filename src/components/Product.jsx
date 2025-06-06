@@ -39,14 +39,14 @@ export default function Product() {
   return (
     <div className="form-container">
       {user && <h2 className="form-title">Welcome, {user.name}!</h2>}
-      <p style={{ color: "#d86c7a" }}>Product List</p><br />
+      <p style={{ color: "#d86c7a" }}> <i className="fas fa-gift product-icon"></i> Product List</p><br /> 
 
-      <div className="product-grid">
+      <div className="product-container">
   {products.map(product => (
     <div key={product._id} className="product-card">
       <h4>{product.name}</h4> <h5>{product.description}</h5>
       <p>₹{product.price}</p>
-      <button onClick={() => addToCart(product)}>Add to Cart</button>
+      <button onClick={() => addToCart(product)}>  <i className="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
   ))}
 </div>

@@ -11,13 +11,13 @@ export default function Header() {
     <header>
       <h1>My React Store</h1>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/cart">Cart</Link>
-       <Link to="/orders">Your Orders</Link>
+        <Link to="/"><i className="fas fa-home"></i> Home</Link>
+        <Link to="/cart"><i className="fas fa-shopping-cart"></i> Cart</Link>
+       <Link to="/orders"><i className="fas fa-box"></i> Your Orders</Link>
         {user.token ? (
-        <Link to="/logout">Logout</Link>
+        <Link to="/logout"><i className="fas fa-sign-out-alt"></i> Logout</Link>
       ) : (
-        <Link to="/login">Login</Link>
+        <Link to="/login"><i className="fas fa-sign-in-alt"></i> Login</Link>
       )}
       </nav>
     </header>

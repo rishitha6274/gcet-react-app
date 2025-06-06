@@ -19,37 +19,39 @@ export default function Register() {
     }
   };
   return (
-    <div className="form-container" style={{ margin: "30px" }}>
-      <h3>Register</h3>
-      <p>
-        <input
-          type="text"
-          placeholder="Name"
-          onChange={(e) => setUser({ ...user, name: e.target.value })}
-        />
-      </p>
-      <p>
-        <input
-          type="text"
-          placeholder="Email address"
-          onChange={(e) => setUser({ ...user, email: e.target.value })}
-        />
-      </p>
-      <p>
-        <input
-          type="password"
-          placeholder="New Password"
-          onChange={(e) => setUser({ ...user, pass: e.target.value })}
-        />
-      </p>
-      <button onClick={handleSubmit}>Submit</button>
-      <hr />
-      {users &&
-        users.map((value) => (
-          <li>
-            {value.name}-{value.email}-{value.pass}
-          </li>
-        ))}
+    <div className="login-box" style={{ margin: "30px" }}>
+      <div>
+        <h3><i className="fas fa-user-plus"></i>Register</h3>
+        <p>
+          <input
+            type="text"
+            placeholder="Name"
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
+          />
+        </p>
+        <p>
+          <input
+            type="text"
+            placeholder="Email address"
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+          />
+        </p>
+        <p>
+          <input
+            type="password"
+            placeholder="New Password"
+            onChange={(e) => setUser({ ...user, pass: e.target.value })}
+          />
+        </p>
+        <button onClick={handleSubmit}>Submit</button>
+        <hr />
+        {users &&
+          users.map((value) => (
+            <li>
+              {value.name}-{value.email}-{value.pass}
+            </li>
+          ))}
+      </div>
     </div>
   );
 }
