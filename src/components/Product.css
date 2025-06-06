@@ -33,9 +33,10 @@
 }
 
 .product-card button {
-  background-color: #d86c7a;
+  background-color: #e48692;
   color: #fff;
   border: none;
+  font-weight: bold;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
