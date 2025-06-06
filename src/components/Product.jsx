@@ -44,7 +44,8 @@ export default function Product() {
       <div className="product-container">
   {products.map(product => (
     <div key={product._id} className="product-card">
-      <h4>{product.name}</h4> <h5>{product.description}</h5>
+      <h4>{product.name}</h4> <h5>{product.description}</h5> <img src={product.imgUrl} alt={product.name} style={{ width: "200px", height: "auto" }} />
+
       <p>₹{product.price}</p>
       <button onClick={() => addToCart(product)}>  <i className="fas fa-cart-plus"></i> Add to Cart</button>
     </div>
