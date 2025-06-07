@@ -51,21 +51,21 @@ export default function Cart() {
             {cart.map((item, index) => (
               <div key={index} className="product-card">
                 <h4>{item.name}</h4>
-                <p>${item.price}</p>
+                <p>₹{item.price}</p>
                 <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "10px" }}>
                   <button onClick={() => updateQuantity(index, -1)}>-</button>
                   <span>{item.quantity || 1}</span>
                   <button onClick={() => updateQuantity(index, 1)}>+</button>
                 </div>
                 <p style={{ marginTop: "10px" }}>
-                  Total: ${(item.price * (item.quantity || 1)).toFixed(2)}
+                  Total: ₹{(item.price * (item.quantity || 1)).toFixed(2)}
                 </p>
               </div>
             ))}
           </div>
 
           <h4 style={{ marginTop: "20px", color: "#d86c7a" }}>
-            Grand Total: ${totalPrice.toFixed(2)}
+            Grand Total: ₹{totalPrice.toFixed(2)}
           </h4>
 
           {user ? (
