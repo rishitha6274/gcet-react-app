@@ -23,7 +23,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <main>
-          <Routes>
+          <Routes index element={<Product />}>
             <Route path="/" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
