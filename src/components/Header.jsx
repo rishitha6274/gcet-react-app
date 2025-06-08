@@ -16,7 +16,7 @@ export default function Header() {
        <Link to="/orders"><i className="fas fa-box"></i> Your Orders</Link>
         {user.token ? (
         <>
-          {user.role === "admin" && <Link to="/admin">Admin</Link>}-
+          {user.role === "admin" && <Link to="/admin">Admin</Link>} 
           <Link to="/logout">Logout</Link>
         </>
       ) : (
