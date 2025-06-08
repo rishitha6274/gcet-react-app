@@ -9,6 +9,7 @@ import Logout from "./components/Logout";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Orders from "./components/Orders";
+import Admin from "./components/Admin";
 
 export const AppContext = createContext();
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<Register />} />
             <Route path="/orders" element={<Orders/>}/>
+            <Route path="/admin" element={<Admin />}></Route>
           </Routes>
         </main>
         <Footer />

@@ -15,7 +15,10 @@ export default function Header() {
         <Link to="/cart"><i className="fas fa-shopping-cart"></i> Cart</Link>
        <Link to="/orders"><i className="fas fa-box"></i> Your Orders</Link>
         {user.token ? (
-        <Link to="/logout"><i className="fas fa-sign-out-alt"></i> Logout</Link>
+        <>
+          {user.role === "admin" && <Link to="/admin">Admin</Link>}-
+          <Link to="/logout">Logout</Link>
+        </>
       ) : (
         <Link to="/login"><i className="fas fa-sign-in-alt"></i> Login</Link>
       )}
